@@ -1,7 +1,7 @@
-package com.example.BlibliotecaServicio.command.api.commands;
+package com.example.BlibliotecaServicio.command.api.commands.libro;
 
 
-import com.example.BlibliotecaServicio.command.api.model.Ediciones;
+import com.example.BlibliotecaServicio.command.api.commands.edicion.CrearEdicionCommand;
 import lombok.Builder;
 import lombok.Data;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
@@ -18,5 +18,5 @@ public class CrearLibroCommand {
     public String nombre;
     public String autor;
     public BigDecimal precio;
-    private ArrayList<Ediciones> ediciones;
+    private ArrayList<CrearEdicionCommand> ediciones;
 }

@@ -1,12 +1,12 @@
 package com.example.BlibliotecaServicio.command.api.aggregate;
 
-import com.example.BlibliotecaServicio.command.api.commands.ActualizarLibroCommand;
-import com.example.BlibliotecaServicio.command.api.commands.CrearLibroCommand;
-import com.example.BlibliotecaServicio.command.api.commands.EliminarLibroCommand;
-import com.example.BlibliotecaServicio.command.api.events.LibroActualizarEvento;
-import com.example.BlibliotecaServicio.command.api.events.LibroCrearEvento;
-import com.example.BlibliotecaServicio.command.api.events.LibroEliminarEvento;
-import com.example.BlibliotecaServicio.command.api.model.Ediciones;
+import com.example.BlibliotecaServicio.command.api.commands.edicion.CrearEdicionCommand;
+import com.example.BlibliotecaServicio.command.api.commands.libro.ActualizarLibroCommand;
+import com.example.BlibliotecaServicio.command.api.commands.libro.CrearLibroCommand;
+import com.example.BlibliotecaServicio.command.api.commands.libro.EliminarLibroCommand;
+import com.example.BlibliotecaServicio.command.api.events.libro.LibroActualizarEvento;
+import com.example.BlibliotecaServicio.command.api.events.libro.LibroCrearEvento;
+import com.example.BlibliotecaServicio.command.api.events.libro.LibroEliminarEvento;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
@@ -28,7 +28,7 @@ public class LibroAggregate {
     public String nombre;
     public String autor;
     public BigDecimal precio;
-    private ArrayList<Ediciones> ediciones;
+    private ArrayList<CrearEdicionCommand> ediciones;
     @CommandHandler
     public LibroAggregate(CrearLibroCommand crearLibroCommand){
         LibroCrearEvento libroCrearEvento = new LibroCrearEvento();

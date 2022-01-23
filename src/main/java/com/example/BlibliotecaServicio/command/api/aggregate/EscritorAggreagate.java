@@ -1,7 +1,7 @@
 package com.example.BlibliotecaServicio.command.api.aggregate;
 
-import com.example.BlibliotecaServicio.command.api.commands.CrearEscritorCommand;
-import com.example.BlibliotecaServicio.command.api.events.EscritorCrearEvento;
+import com.example.BlibliotecaServicio.command.api.commands.escritor.CrearEscritorCommand;
+import com.example.BlibliotecaServicio.command.api.events.escritor.EscritorCrearEvento;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;

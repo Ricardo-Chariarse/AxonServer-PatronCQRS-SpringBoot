@@ -1,4 +1,4 @@
-package com.example.BlibliotecaServicio.command.api.commands;
+package com.example.BlibliotecaServicio.command.api.commands.edicion;
 
 import lombok.Builder;
 import lombok.Data;

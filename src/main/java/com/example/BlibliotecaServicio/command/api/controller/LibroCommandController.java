@@ -1,9 +1,9 @@
 package com.example.BlibliotecaServicio.command.api.controller;
 
 
-import com.example.BlibliotecaServicio.command.api.commands.ActualizarLibroCommand;
-import com.example.BlibliotecaServicio.command.api.commands.CrearLibroCommand;
-import com.example.BlibliotecaServicio.command.api.commands.EliminarLibroCommand;
+import com.example.BlibliotecaServicio.command.api.commands.libro.ActualizarLibroCommand;
+import com.example.BlibliotecaServicio.command.api.commands.libro.CrearLibroCommand;
+import com.example.BlibliotecaServicio.command.api.commands.libro.EliminarLibroCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,7 +42,7 @@ public class LibroCommandController {
         return result;
     }
     @DeleteMapping("/delete")
-    public ResponseEntity<String> deleteLibro(@PathVariable("id") String id){
+    public ResponseEntity<String> deleteLibro(@PathVariable("libroId") String id){
 //        EliminarLibroCommand eliminarLibroCommand =
 //                EliminarLibroCommand.builder()
 //                        .libroId(libroEliminarModel.getLibroId())

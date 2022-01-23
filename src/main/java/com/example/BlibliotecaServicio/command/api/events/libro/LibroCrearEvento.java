@@ -1,6 +1,6 @@
-package com.example.BlibliotecaServicio.command.api.events;
+package com.example.BlibliotecaServicio.command.api.events.libro;
 
-import com.example.BlibliotecaServicio.command.api.model.Ediciones;
+import com.example.BlibliotecaServicio.command.api.commands.edicion.CrearEdicionCommand;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +19,6 @@ public class LibroCrearEvento {
     private String nombre;
     private String autor;
     private BigDecimal precio;
-    private ArrayList<Ediciones> ediciones;
+    private ArrayList<CrearEdicionCommand> ediciones;
 
 }

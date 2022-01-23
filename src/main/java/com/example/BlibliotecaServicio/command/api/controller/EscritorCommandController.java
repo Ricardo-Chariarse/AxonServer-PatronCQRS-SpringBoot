@@ -1,8 +1,7 @@
 package com.example.BlibliotecaServicio.command.api.controller;
 
 
-import com.example.BlibliotecaServicio.command.api.commands.CrearEscritorCommand;
-import com.example.BlibliotecaServicio.command.api.model.EscritorRestModel;
+import com.example.BlibliotecaServicio.command.api.commands.escritor.CrearEscritorCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,13 +17,13 @@ public class EscritorCommandController {
     }
 
     @PostMapping("/add")
-    public String AddEscritorCommand(@RequestBody EscritorRestModel escritorRestModel){
+    public String AddEscritorCommand(@RequestBody CrearEscritorCommand command){
         CrearEscritorCommand crearEscritorCommand = CrearEscritorCommand
                 .builder()
                 .escritroId(UUID.randomUUID().toString())
-                .nombre(escritorRestModel.getNombre())
-                .apellidos(escritorRestModel.getApellidos())
-                .numeroObras(escritorRestModel.getNumeroObras())
+                .nombre(command.getNombre())
+                .apellidos(command.getApellidos())
+                .numeroObras(command.getNumeroObras())
                 .build();
         String result = commandGateway.sendAndWait(crearEscritorCommand);
         return result;

@@ -1,7 +1,7 @@
 package com.example.BlibliotecaServicio.command.api.controller;
 
-import com.example.BlibliotecaServicio.command.api.commands.ActualizarEdicionCommand;
-import com.example.BlibliotecaServicio.command.api.commands.CrearEdicionCommand;
+import com.example.BlibliotecaServicio.command.api.commands.edicion.ActualizarEdicionCommand;
+import com.example.BlibliotecaServicio.command.api.commands.edicion.CrearEdicionCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;

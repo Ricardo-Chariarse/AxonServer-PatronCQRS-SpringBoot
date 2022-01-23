@@ -1,5 +1,4 @@
-package com.example.BlibliotecaServicio.command.api.events;
-
+package com.example.BlibliotecaServicio.command.api.events.edicion;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class EdicionCrearEvento {
+public class EdicionActualizarEvento {
     private String edicionId;
     private String libroId;
     private String editora;

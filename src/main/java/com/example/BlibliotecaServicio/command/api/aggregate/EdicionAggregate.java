@@ -1,9 +1,9 @@
 package com.example.BlibliotecaServicio.command.api.aggregate;
 
-import com.example.BlibliotecaServicio.command.api.commands.ActualizarEdicionCommand;
-import com.example.BlibliotecaServicio.command.api.commands.CrearEdicionCommand;
-import com.example.BlibliotecaServicio.command.api.events.EdicionActualizarEvento;
-import com.example.BlibliotecaServicio.command.api.events.EdicionCrearEvento;
+import com.example.BlibliotecaServicio.command.api.commands.edicion.ActualizarEdicionCommand;
+import com.example.BlibliotecaServicio.command.api.commands.edicion.CrearEdicionCommand;
+import com.example.BlibliotecaServicio.command.api.events.edicion.EdicionActualizarEvento;
+import com.example.BlibliotecaServicio.command.api.events.edicion.EdicionCrearEvento;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;

@@ -1,4 +1,4 @@
-package com.example.BlibliotecaServicio.command.api.events;
+package com.example.BlibliotecaServicio.command.api.events.libro;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

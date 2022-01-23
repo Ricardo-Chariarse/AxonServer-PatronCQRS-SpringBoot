@@ -1,10 +1,13 @@
-package com.example.BlibliotecaServicio.command.api.events;
+package com.example.BlibliotecaServicio.command.api.events.handler;
 
+import com.example.BlibliotecaServicio.command.api.commands.edicion.CrearEdicionCommand;
 import com.example.BlibliotecaServicio.command.api.data.Edicion;
 import com.example.BlibliotecaServicio.command.api.data.EdicionRepositorio;
 import com.example.BlibliotecaServicio.command.api.data.Libro;
 import com.example.BlibliotecaServicio.command.api.data.LibroRepositorio;
-import com.example.BlibliotecaServicio.command.api.model.Ediciones;
+import com.example.BlibliotecaServicio.command.api.events.libro.LibroActualizarEvento;
+import com.example.BlibliotecaServicio.command.api.events.libro.LibroCrearEvento;
+import com.example.BlibliotecaServicio.command.api.events.libro.LibroEliminarEvento;
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.beans.BeanUtils;
@@ -28,8 +31,8 @@ public class LibroEventHandler {
     public void on(LibroCrearEvento evento) {
         Libro libro = new Libro();
         if(evento.getEdiciones() != null){
-            ArrayList<Ediciones> ediciones = evento.getEdiciones();
-            for (Ediciones item:ediciones) {
+            ArrayList<CrearEdicionCommand> ediciones = evento.getEdiciones();
+            for (CrearEdicionCommand item:ediciones) {
                 Edicion edicion = new Edicion();
                 item.setLibroId(evento.getLibroId());
                 BeanUtils.copyProperties(item,edicion);
