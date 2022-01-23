@@ -4,11 +4,6 @@ package com.example.BlibliotecaServicio.command.api.controller;
 import com.example.BlibliotecaServicio.command.api.commands.ActualizarLibroCommand;
 import com.example.BlibliotecaServicio.command.api.commands.CrearLibroCommand;
 import com.example.BlibliotecaServicio.command.api.commands.EliminarLibroCommand;
-import com.example.BlibliotecaServicio.command.api.data.Libro;
-import com.example.BlibliotecaServicio.command.api.model.EscritorRestModel;
-import com.example.BlibliotecaServicio.command.api.model.LibroActualizarModel;
-import com.example.BlibliotecaServicio.command.api.model.LibroEliminarModel;
-import com.example.BlibliotecaServicio.command.api.model.LibroRestModel;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,13 +38,6 @@ public class LibroCommandController {
     }
     @PostMapping("/update")
     public String updateLibro(@RequestBody ActualizarLibroCommand command){
-//        ActualizarLibroCommand actualizarLibroCommand =
-//                ActualizarLibroCommand.builder()
-//                        .libroId(libroActualizarModel.getLibroId())
-//                        .nombre(libroActualizarModel.getNombre())
-//                        .autor(libroActualizarModel.getAutor())
-//                        .precio(libroActualizarModel.getPrecio())
-//                        .build();
         String result = commandGateway.sendAndWait(command);
         return result;
     }
