@@ -1,7 +1,7 @@
 package com.example.BlibliotecaServicio.query.api.projection;
 
-import com.example.BlibliotecaServicio.command.api.data.Libro;
-import com.example.BlibliotecaServicio.command.api.data.LibroRepositorio;
+import com.example.BlibliotecaServicio.data.Libro;
+import com.example.BlibliotecaServicio.data.LibroRepositorio;
 import com.example.BlibliotecaServicio.query.api.querys.ObtenerLibroQuery;
 import com.example.BlibliotecaServicio.query.api.querys.ObtenerLibrosQuery;
 import com.example.BlibliotecaServicio.query.api.viewmodel.LibroResponseModel;

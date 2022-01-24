@@ -23,32 +23,17 @@ public class LibroCommandController {
 
     @PostMapping("/add")
     public String addLibro(@RequestBody CrearLibroCommand command){
-
-//        CrearLibroCommand crearLibroCommand =
-//                CrearLibroCommand.builder()
-//                        .libroId(UUID.randomUUID().toString())
-//                        .nombre(libroRestModel.getNombre())
-//                        .autor(libroRestModel.getAutor())
-//                        .precio(libroRestModel.getPrecio())
-//                        .ediciones(libroRestModel.getEdiciones())
-//                        .build();
         command.setLibroId(UUID.randomUUID().toString());
         String result = commandGateway.sendAndWait(command);
         return result;
     }
-    @PostMapping("/update")
+    @PutMapping("/update")
     public String updateLibro(@RequestBody ActualizarLibroCommand command){
         String result = commandGateway.sendAndWait(command);
         return result;
     }
     @DeleteMapping("/delete")
-    public ResponseEntity<String> deleteLibro(@PathVariable("libroId") String id){
-//        EliminarLibroCommand eliminarLibroCommand =
-//                EliminarLibroCommand.builder()
-//                        .libroId(libroEliminarModel.getLibroId())
-//                        .build();
-        var command = new  EliminarLibroCommand();
-        command.setLibroId(id);
+    public ResponseEntity<String> deleteLibro(@RequestBody EliminarLibroCommand command){
         String result = commandGateway.sendAndWait(command);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }

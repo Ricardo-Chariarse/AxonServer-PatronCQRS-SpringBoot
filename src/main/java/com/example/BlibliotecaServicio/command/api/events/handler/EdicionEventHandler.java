@@ -1,9 +1,9 @@
 package com.example.BlibliotecaServicio.command.api.events.handler;
 
 
-import com.example.BlibliotecaServicio.command.api.data.Edicion;
-import com.example.BlibliotecaServicio.command.api.data.EdicionRepositorio;
-import com.example.BlibliotecaServicio.command.api.data.LibroRepositorio;
+import com.example.BlibliotecaServicio.data.Edicion;
+import com.example.BlibliotecaServicio.data.EdicionRepositorio;
+import com.example.BlibliotecaServicio.data.LibroRepositorio;
 import com.example.BlibliotecaServicio.command.api.events.edicion.EdicionActualizarEvento;
 import com.example.BlibliotecaServicio.command.api.events.edicion.EdicionCrearEvento;
 import org.axonframework.config.ProcessingGroup;

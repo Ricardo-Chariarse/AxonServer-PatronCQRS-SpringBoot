@@ -1,10 +1,10 @@
 package com.example.BlibliotecaServicio.command.api.events.handler;
 
 import com.example.BlibliotecaServicio.command.api.commands.edicion.CrearEdicionCommand;
-import com.example.BlibliotecaServicio.command.api.data.Edicion;
-import com.example.BlibliotecaServicio.command.api.data.EdicionRepositorio;
-import com.example.BlibliotecaServicio.command.api.data.Libro;
-import com.example.BlibliotecaServicio.command.api.data.LibroRepositorio;
+import com.example.BlibliotecaServicio.data.Edicion;
+import com.example.BlibliotecaServicio.data.EdicionRepositorio;
+import com.example.BlibliotecaServicio.data.Libro;
+import com.example.BlibliotecaServicio.data.LibroRepositorio;
 import com.example.BlibliotecaServicio.command.api.events.libro.LibroActualizarEvento;
 import com.example.BlibliotecaServicio.command.api.events.libro.LibroCrearEvento;
 import com.example.BlibliotecaServicio.command.api.events.libro.LibroEliminarEvento;

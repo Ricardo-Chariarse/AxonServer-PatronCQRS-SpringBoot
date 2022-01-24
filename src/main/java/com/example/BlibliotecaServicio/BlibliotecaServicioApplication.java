@@ -1,7 +1,6 @@
 package com.example.BlibliotecaServicio;
 
-import com.example.BlibliotecaServicio.command.api.exception.LibroServiceEventsErrorHandler;
-import io.swagger.annotations.Info;
+import com.example.BlibliotecaServicio.exception.LibroServiceEventsErrorHandler;
 import org.axonframework.config.EventProcessingConfigurer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

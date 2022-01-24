@@ -1,22 +1,18 @@
 package com.example.BlibliotecaServicio.query.api.projection;
 
 
-import com.example.BlibliotecaServicio.command.api.data.Edicion;
-import com.example.BlibliotecaServicio.command.api.data.EdicionRepositorio;
-import com.example.BlibliotecaServicio.command.api.data.Libro;
-import com.example.BlibliotecaServicio.command.api.data.LibroRepositorio;
+import com.example.BlibliotecaServicio.data.Edicion;
+import com.example.BlibliotecaServicio.data.EdicionRepositorio;
+import com.example.BlibliotecaServicio.data.LibroRepositorio;
 import com.example.BlibliotecaServicio.query.api.querys.ObtenerEdicionesLibroQuery;
 import com.example.BlibliotecaServicio.query.api.querys.ObtenerEdicionesQuery;
-import com.example.BlibliotecaServicio.query.api.querys.ObtenerLibrosQuery;
 import com.example.BlibliotecaServicio.query.api.viewmodel.EdicionResponseModel;
-import com.example.BlibliotecaServicio.query.api.viewmodel.LibroResponseModel;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component

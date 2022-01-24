@@ -1,4 +1,4 @@
-package com.example.BlibliotecaServicio.command.api.exception;
+package com.example.BlibliotecaServicio.exception;
 
 import org.axonframework.eventhandling.EventMessage;
 import org.axonframework.eventhandling.EventMessageHandler;

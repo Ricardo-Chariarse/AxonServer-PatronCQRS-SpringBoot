@@ -1,4 +1,4 @@
-package com.example.BlibliotecaServicio.command.api.data;
+package com.example.BlibliotecaServicio.data;
 
 import lombok.Data;
 
