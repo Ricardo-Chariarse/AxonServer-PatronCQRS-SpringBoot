@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Data
 @Table(name="edicion")
 public class Edicion {
-    @Id
+    @Id()
     private String edicionId;
     private String libroId;
     private String editora;

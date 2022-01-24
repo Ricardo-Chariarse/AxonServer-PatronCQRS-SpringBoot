@@ -3,7 +3,7 @@ package com.example.BlibliotecaServicio.query.api.controller;
 
 import com.example.BlibliotecaServicio.query.api.querys.ObtenerLibroQuery;
 import com.example.BlibliotecaServicio.query.api.querys.ObtenerLibrosQuery;
-import com.example.BlibliotecaServicio.query.api.viewmodel.LibroRequestModel;
+import com.example.BlibliotecaServicio.query.api.viewmodel.LibroResponseModel;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/querylibro")
@@ -21,19 +20,19 @@ public class LibroQueryController {
     private QueryGateway queryGateway;
 
     @GetMapping("/obtenerLibros")
-    private List<LibroRequestModel> obtenerLibros(){
+    private List<LibroResponseModel> obtenerLibros(){
         ObtenerLibrosQuery obtenerLibrosQuery = new ObtenerLibrosQuery();
-        List<LibroRequestModel> libroRequestModels =
+        List<LibroResponseModel> libroRequestModels =
                 queryGateway.query(obtenerLibrosQuery,
-                                ResponseTypes.multipleInstancesOf(LibroRequestModel.class))
+                                ResponseTypes.multipleInstancesOf(LibroResponseModel.class))
                                 .join();
         return libroRequestModels;
     }
     @GetMapping("/obtenerLibro")
-    private LibroRequestModel obtenerLibro(ObtenerLibroQuery obtenerLibrosQuery){
-        LibroRequestModel libroRequestModels =
+    private LibroResponseModel obtenerLibro(ObtenerLibroQuery obtenerLibrosQuery){
+        LibroResponseModel libroRequestModels =
                 queryGateway.query(obtenerLibrosQuery,
-                                ResponseTypes.instanceOf(LibroRequestModel.class))
+                                ResponseTypes.instanceOf(LibroResponseModel.class))
                         .join();
         return libroRequestModels;
     }

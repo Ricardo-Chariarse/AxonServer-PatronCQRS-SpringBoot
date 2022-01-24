@@ -4,7 +4,7 @@ import com.example.BlibliotecaServicio.command.api.data.Libro;
 import com.example.BlibliotecaServicio.command.api.data.LibroRepositorio;
 import com.example.BlibliotecaServicio.query.api.querys.ObtenerLibroQuery;
 import com.example.BlibliotecaServicio.query.api.querys.ObtenerLibrosQuery;
-import com.example.BlibliotecaServicio.query.api.viewmodel.LibroRequestModel;
+import com.example.BlibliotecaServicio.query.api.viewmodel.LibroResponseModel;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.stereotype.Component;
 
@@ -20,10 +20,10 @@ public class LibroProjection {
     private LibroRepositorio libroRepositorio;
 
     @QueryHandler
-    public List<LibroRequestModel> handle(ObtenerLibrosQuery query){
+    public List<LibroResponseModel> handle(ObtenerLibrosQuery query){
         List<Libro> libros = libroRepositorio.findAll();
-        List<LibroRequestModel> libroRequestModels =
-                libros.stream().map(libro -> LibroRequestModel.builder()
+        List<LibroResponseModel> libroRequestModels =
+                libros.stream().map(libro -> LibroResponseModel.builder()
                         .libroId(libro.getLibroId())
                         .autor(libro.getAutor())
                         .nombre(libro.getNombre())
@@ -34,16 +34,18 @@ public class LibroProjection {
     }
 
     @QueryHandler
-    public Optional<LibroRequestModel> handle(ObtenerLibroQuery query){
+    public Optional<LibroResponseModel> handle(ObtenerLibroQuery query){
         String libroId = query.getLibroId();
         Optional<Libro> libros = libroRepositorio.findById(libroId);
-        return libros.map(libro -> LibroRequestModel.builder()
+        Optional<LibroResponseModel> libroRequestModels =
+                libros.map(libro -> LibroResponseModel.builder()
                         .libroId(libro.getLibroId())
                         .autor(libro.getAutor())
                         .nombre(libro.getNombre())
                         .precio(libro.getPrecio())
                         .build()
                 );
+        return libroRequestModels;
     }
 
 }
